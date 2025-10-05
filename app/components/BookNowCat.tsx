@@ -5,91 +5,75 @@ import Link from "next/link";
 
 const BookNowCat = () => {
   return (
-    <section className="relative py-20 lg:py-32 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-500 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative py-16 lg:py-24 bbg-white" id="contact">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
         <motion.h2
-          className="text-4xl lg:text-6xl font-bold text-white mb-6"
+          className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Ready for Your
-          <span className="block text-yellow-200">Dream Escape?</span>
+          Your Perfect Getaway
+          <span className="block text-amber-500">Awaits</span>
         </motion.h2>
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl lg:text-2xl text-amber-100 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Don&#39;t just dream about paradise - experience it. Limited rooms available for your perfect getaway.
+          Experience luxury and tranquility at Royal Comfort Beach Resort. 
+          Your dream vacation is just a click away.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          {/* Primary Button */}
           <Link href="/book">
             <motion.button
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)"
+                boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-12 py-5 bg-white text-amber-600 font-bold rounded-2xl text-xl shadow-2xl hover:shadow-white/40 transition-all duration-300 relative overflow-hidden group"
+              className="px-12 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl text-lg shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
             >
-              {/* Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              
-              <span className="relative z-10 flex items-center gap-3">
-                Book Your Stay Now
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  ✨
-                </motion.span>
-              </span>
-            </motion.button>
-          </Link>
-
-          {/* Secondary Button */}
-          <Link href="/rooms">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 border-2 border-white text-white font-bold rounded-2xl text-xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
-            >
-              Explore Rooms
+              Book Your Stay
             </motion.button>
           </Link>
         </motion.div>
 
-        {/* Guarantee Text */}
-        <motion.p
-          className="text-amber-200 mt-8 text-lg"
+        {/* Trust Badges */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-6 mt-8 text-gray-500 text-sm"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          ⭐ Best Price Guarantee • Free Cancellation • 24/7 Support
-        </motion.p>
+          <div className="flex items-center gap-2">
+            <span>⭐</span>
+            <span>Best Price Guarantee</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>🔄</span>
+            <span>Free Cancellation</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>🏆</span>
+            <span>Luxury Certified</span>
+          </div>
+        </motion.div>
       </div>
-
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 };

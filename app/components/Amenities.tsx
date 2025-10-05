@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Amenities = () => {
   const amenities = [
@@ -35,7 +36,10 @@ const Amenities = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center  overflow-x-hidden" id="amenities">
+    <section
+      className="min-h-screen flex items-center justify-center  overflow-x-hidden"
+      id="amenities"
+    >
       <div className="w-full max-w-full">
         {/* Grid layout with position for the button */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 relative">
@@ -80,7 +84,7 @@ const Amenities = () => {
               </div>
             </motion.div>
           ))}
-          
+
           {/* Last 2 items */}
           {amenities.slice(2, 4).map((amenity, index) => (
             <motion.div
@@ -122,7 +126,7 @@ const Amenities = () => {
               </div>
             </motion.div>
           ))}
-          
+
           {/* Book Now button - positioned absolutely for large screens to be between 2nd and 3rd item */}
           <motion.div
             className="hidden lg:flex absolute left-1/2 bottom-10 transform -translate-x-1/2 z-10 justify-center items-center"
@@ -131,16 +135,18 @@ const Amenities = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl text-lg shadow-xl hover:shadow-amber-500/25 transition-all duration-300"
-            >
-              Book Your Stay Now
-            </motion.button>
+            <Link href="/book">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-12 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl text-lg shadow-xl hover:shadow-amber-500/25 transition-all duration-300"
+              >
+                Book Your Stay Now
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
-        
+
         {/* Mobile/Tablet Book Now button - shown below the grid */}
         <motion.div
           className="lg:hidden text-center mt-6 mb-4 px-4"
@@ -149,13 +155,15 @@ const Amenities = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full max-w-xs sm:max-w-md px-6 sm:px-10 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl text-sm sm:text-base shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
-          >
-            Book Your Stay Now
-          </motion.button>
+          <Link href="/book">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full max-w-xs sm:max-w-md px-6 sm:px-10 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl text-sm sm:text-base shadow-lg hover:shadow-amber-500/25 transition-all duration-300"
+            >
+              Book Your Stay Now
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

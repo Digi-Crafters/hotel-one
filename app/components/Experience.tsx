@@ -110,7 +110,7 @@ const Experience = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.a
-                href="#booking"
+                href="/book"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 10px 30px rgba(251, 191, 36, 0.4)"

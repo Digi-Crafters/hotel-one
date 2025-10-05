@@ -163,7 +163,7 @@ const Rooms = () => {
 
                 {/* CTA Button */}
                 <Link
-                  href={`/rooms/${room.id}`}
+                  href={`/rooms/${room.slug}`}
                   className="block w-full bg-amber-500 hover:bg-amber-600 text-white text-center font-semibold py-3 rounded-xl transition-colors"
                 >
                   View Details

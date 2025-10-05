@@ -63,7 +63,7 @@ const Hero = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <motion.a
-            href="#booking"
+            href="/book"
             whileHover={{
               scale: 1.08,
               boxShadow: "0px 0px 30px rgba(255, 193, 7, 0.4)",
